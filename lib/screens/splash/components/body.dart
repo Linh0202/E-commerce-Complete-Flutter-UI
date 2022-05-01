@@ -15,17 +15,13 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
+    {"text": "Sống xanh cùng Mòe!", "image": "assets/images/splash_1.png"},
     {
-      "text": "Welcome to Tokoto, Let’s shop!",
-      "image": "assets/images/splash_1.png"
-    },
-    {
-      "text":
-          "We help people conect with store \naround United State of America",
+      "text": "Mua sắm các sản phẩm thân thiện với môi trường",
       "image": "assets/images/splash_2.png"
     },
     {
-      "text": "We show the easy way to shop. \nJust stay at home with us",
+      "text": "Trải nghiệm tiện ích sống xanh dễ dàng",
       "image": "assets/images/splash_3.png"
     },
   ];
@@ -68,7 +64,7 @@ class _BodyState extends State<Body> {
                     ),
                     Spacer(flex: 3),
                     DefaultButton(
-                      text: "Continue",
+                      text: "Tiếp tục",
                       press: () {
                         Navigator.pushNamed(context, SignInScreen.routeName);
                       },

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/size_config.dart';
 
-const kPrimaryColor = Color(0xFFFF7643);
+const kPrimaryColor = Color.fromRGBO(0, 153, 0, 1);
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
-  colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
+  colors: [Color.fromRGBO(0, 153, 0, 1), Color.fromRGBO(153, 225, 153, 1)],
 );
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
@@ -25,14 +25,14 @@ const defaultDuration = Duration(milliseconds: 250);
 // Form Error
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-const String kEmailNullError = "Please Enter your email";
-const String kInvalidEmailError = "Please Enter Valid Email";
-const String kPassNullError = "Please Enter your password";
-const String kShortPassError = "Password is too short";
-const String kMatchPassError = "Passwords don't match";
-const String kNamelNullError = "Please Enter your name";
-const String kPhoneNumberNullError = "Please Enter your phone number";
-const String kAddressNullError = "Please Enter your address";
+const String kEmailNullError = "Tài khoản không được để trống!";
+const String kInvalidEmailError = "Vui lòng kiểm tra lại email";
+const String kPassNullError = "Mật khẩu không được để trống!";
+const String kShortPassError = "Mật khẩu quá ngắn";
+const String kMatchPassError = "Mật khẩu không khớp";
+const String kNamelNullError = "Vui lòng nhập tên của bạn";
+const String kPhoneNumberNullError = "Vui lòng nhập số điện thoại";
+const String kAddressNullError = "Vui lòng nhập địa chỉ";
 
 final otpInputDecoration = InputDecoration(
   contentPadding:
