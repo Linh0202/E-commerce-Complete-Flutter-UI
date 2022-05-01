@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
@@ -16,7 +17,7 @@ class SpecialOffers extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
-            title: "Special for you",
+            title: "Các nhãn hàng",
             press: () {},
           ),
         ),
@@ -26,15 +27,17 @@ class SpecialOffers extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                image: "assets/images/Image Banner 2.png",
-                category: "Smartphone",
-                numOfBrands: 18,
+                image:
+                    "https://bizweb.dktcdn.net/100/399/032/files/section-image-video.jpg?v=1597919405570",
+                category: "Cô cà chua",
+                numOfItems: 18,
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "assets/images/Image Banner 3.png",
-                category: "Fashion",
-                numOfBrands: 24,
+                image:
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy1leL66ITEbElMYIg4Uj0JQT4V8MNOTH1Hg&usqp=CAU",
+                category: "Fuwa 3e",
+                numOfItems: 24,
                 press: () {},
               ),
               SizedBox(width: getProportionateScreenWidth(20)),
@@ -51,12 +54,12 @@ class SpecialOfferCard extends StatelessWidget {
     Key? key,
     required this.category,
     required this.image,
-    required this.numOfBrands,
+    required this.numOfItems,
     required this.press,
   }) : super(key: key);
 
   final String category, image;
-  final int numOfBrands;
+  final int numOfItems;
   final GestureTapCallback press;
 
   @override
@@ -67,14 +70,16 @@ class SpecialOfferCard extends StatelessWidget {
         onTap: press,
         child: SizedBox(
           width: getProportionateScreenWidth(242),
-          height: getProportionateScreenWidth(100),
+          height: getProportionateScreenWidth(400),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Stack(
               children: [
-                Image.asset(
-                  image,
+                CachedNetworkImage(
+                  imageUrl: image,
                   fit: BoxFit.cover,
+                  width: getProportionateScreenWidth(242),
+                  height: getProportionateScreenWidth(400),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -104,7 +109,7 @@ class SpecialOfferCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
+                        TextSpan(text: "$numOfItems sản phẩm")
                       ],
                     ),
                   ),
